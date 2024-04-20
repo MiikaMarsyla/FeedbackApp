@@ -31,9 +31,12 @@ jobs:
       - name: Install step
         run: "npm install"
 
+      - name: Build step
+        run: "--allow-read --unstable-kv"
+
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "miikamarsyl-feedbackapp-52"
           entrypoint: ""
-          root: ""
+          root: "app-run.js"
