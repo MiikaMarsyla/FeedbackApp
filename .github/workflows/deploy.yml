@@ -32,11 +32,11 @@ jobs:
         run: "npm install"
 
       - name: Build step
-        run: "--allow-read --unstable-kv"
+        run: "npm run build"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "miikamarsyl-feedbackapp-52"
-          entrypoint: ""
-          root: "app-run.js"
+          project: "miikamarsyl-feedbackapp-97"
+          entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
+          root: "build"
